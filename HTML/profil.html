@@ -1,0 +1,118 @@
+<fieldset class="profil__info">
+	<legend>INFORMATIONS</legend>
+	<form action="">
+		<span id="user__error"></span>
+
+		<div class="options__visibility">
+			<p class="visibility__txt"><input id="visibility_off" type="radio" name="visibility_profil" class="visibility__btn" value="0">
+				Je ne souhaite pas que mes informations soient affichées sur le profil.</p><br>
+			<p class="visibility__txt"><input id="visibility_on" type="radio" name="visibility_profil" class="visibility__btn" value="1">
+				Je souhaite que mes informations soient affichées sur le profil.</p><br>
+		</div>
+
+		<div class="profil__picture">
+
+			<label class="label__generic">
+				<img src="<?= isset($obj_main->result["data_stagiaire"][0]["photo_utilisateur"])? $obj_main->result["data_stagiaire"][0]["photo_utilisateur"] : "" ;?>"
+				     alt="">
+				<input type="file" name="profil_photo" accept="image/*"><br>
+			</label>
+		</div>
+		<div class="civil__state">
+			<label class="label__generic">Nom</label><br>
+			<input id="user_last_name" type="text" class="input__txt" name="last_name" autocomplete='family-name' placeholder="Veuillez saisir votre nom..." value="<?= isset($obj_main->result["data_stagiaire"][0]["nom_utilisateur"])? $obj_main->result["data_stagiaire"][0]["nom_utilisateur"] : "" ;?>"><br>
+
+			<label class="label__generic">Prenom</label><br>
+			<input id="user_first_name" type="text" class="input__txt" name="first_name" autocomplete='given-name' placeholder="Veuillez saisir votre prénom..." value="<?= isset($obj_main->result["data_stagiaire"][0]["prenom_utilisateur"])? $obj_main->result["data_stagiaire"][0]["prenom_utilisateur"] : "" ;?>"><br>
+
+			<label class="label__generic">Site internet</label> <br>
+			<input id="user_site" type="url" class="input__txt" name="url_site"
+			       placeholder="Veuillez saisir l'adresse de votre site internet" value="<?= isset($obj_main->result["data_stagiaire"][0]["site_utilisateur"])? $obj_main->result["data_stagiaire"][0]["site_utilisateur"] : "" ;?>"><br>
+
+			<label class="label__generic">Description (longueur max 250)</label><br>
+			<textarea id="user_description" class="profil__description" name="description"
+			          placeholder="Description libre...Racontez vos projets professionnels et/ou personnels." value=""><?= isset($obj_main->result["data_stagiaire"][0]["description_utilisateur"])? $obj_main->result["data_stagiaire"][0]["description_utilisateur"] : "" ;?></textarea>
+
+			<input type="button" id="up_info" class="btn__generic" name="" value="Mettre à jour">
+	</form>
+</fieldset>
+
+<fieldset class="password__manager">
+	<legend class="title__field">MOT DE PASSE</legend>
+	<span id="password__error"></span><br>
+	<form action="" method="POST">
+		<label class="label__generic">Nouveau mot de passe</label><br>
+		<input type="password" class="input__txt" name="new_password" placeholder="Veuillez saisir le nouveau mot de passe" required autocomplete="new-password"><br>
+		<label class="label__generic">Confirmer le nouveau mot de passe</label><br>
+		<input type="password" class="input__txt" name="confirm_password"
+		       placeholder="Veuillez confirmer le nouveau mot de passe" required autocomplete="new-password"><br>
+		<input type="button" id="up_password" class="btn__generic" name="" value="Mettre à jour">
+	</form>
+</fieldset>
+
+<fieldset class="email__manager">
+	<legend class="title__field">COURRIEL</legend>
+	<span id="email__error"></span><br>
+	<form action="" method="POST">
+		<label class="label__generic">Nouvelle adresse courriel</label><br>
+		<input type="email" class="input__txt" id="new_email" name="new_email"
+	       placeholder="Veuillez saisir la nouvelle adresse courriel" required><br>
+
+		<label class="label__generic">Confirmer la nouvelle adresse</label><br>
+		<input type="email" class="input__txt" id="confirm_email" name="confirm_email"
+	       placeholder="Veuillez confirmer la nouvelle adresse" ><br>
+		<input type="button" id="up_email" class="btn__generic" name="" value="Mettre à jour">
+
+	</form>
+</fieldset>
+
+
+<fieldset class="doc__field">
+	<legend class="title__field">DOCUMENTS</legend>
+	<input type="file" class="input__txt" name="document"><br>
+	<input type="file" class="input__txt" name="document"><br>
+	<input type="file" class="input__txt" name="document"><br>
+	<input type="file" class="input__txt" name="document"><br>
+</fieldset>
+
+
+<fieldset class="social__field">
+
+	<legend class="title__field">RESEAUX SOCIAUX</legend>
+	<span id="select__social__error"></span><br>
+
+	<?php 
+		for($i = 0; $i <= count($obj_main->result["rs"])-1; $i++){
+			echo "<label><img src=\"".$obj_main->result["rs"][$i]["url_img_reseau_social"]."\" alt=\"\"><input type=\"text\" class=\"input__txt rs\" id=\"". $obj_main->result["rs"][$i]["id_reseau_social"]."\" ";
+			for($j = 0; $j <= count($obj_main->result["data_stagiaire_rs"])-1; $j++){
+				if($obj_main->result["rs"][$i]["id_reseau_social"] === $obj_main->result["data_stagiaire_rs"][$j]["id_reseau_social"]){
+					echo "value=\" ".$obj_main->result["data_stagiaire_rs"][$j]["url_reseau_social"]."\">";
+				}
+			}
+			echo "</label><br>";
+		}
+	?>
+
+	<input type="button" id="up_rs" class="btn__generic" name="" value="Mettre à jour">
+</fieldset>
+
+<div class="col__right">
+	<fieldset id="techno__field" class="techno__field checkbox__techno">
+		<legend class="title__field">TECHNOLOGIES</legend>
+		<span id="select__techno__error"></span><br>
+
+		<?php 
+			for($i = 0; $i <= count($obj_main->result["techno"])-1; $i++){
+				echo "<label class=\"label__generic\"><img src=\" ".$obj_main->result["techno"][$i]["url_img_technologie"]."\" class=\"icons__techno\"/><input name=\"".$obj_main->result["techno"][$i]["nom_technologie"]."\" type=\"checkbox\" id=\"".$obj_main->result["techno"][$i]["id_technologie"]."\"";
+
+				for($j = 0; $j <= count($obj_main->result["data_stagiaire_techno"])-1; $j++){
+					if($obj_main->result["techno"][$i]["id_technologie"] === $obj_main->result["data_stagiaire_techno"][$j]["id_technologie"]){
+						echo "checked=\"true\"";
+					}
+				}
+				echo "></label>";
+			}
+		?>
+		<input type="button" id="up_techno" class="btn__generic" name="" value="Mettre à jour">
+	</fieldset>
+</div>

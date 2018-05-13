@@ -1,0 +1,474 @@
+/************************************************************/
+/*							HTML and Body					*/
+/************************************************************/
+
+html {
+	font: 1rem "AGENCYB";
+	height: 100%;
+	width: 100%;
+	min-width: 320px;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c1e6a8+0,c1e6a8+9,ecf0f1+32 */
+	background: #c1e6a8; /* Old browsers */
+	background: -moz-linear-gradient(top, #c1e6a8 0%, #c1e6a8 9%, #ecf0f1 32%) fixed; /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #c1e6a8 0%, #c1e6a8 9%, #ecf0f1 32%) fixed; /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #c1e6a8 0%, #c1e6a8 9%, #ecf0f1 32%) fixed; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c1e6a8', endColorstr='#ecf0f1', GradientType=0); /* IE6-9 */
+}
+
+#page {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	background: url("../img/afpalab_logo_low_opacity.png") no-repeat fixed left;
+	background-size: auto 80%;
+}
+
+/************************************************************/
+/*								Nav							*/
+/************************************************************/
+
+nav {
+	background: linear-gradient(#3d6b1f, #528e29, #66b033);
+	width: 100%;
+	min-width: 320px;
+	z-index: 100;
+	height: 60px;
+	font-size: 1.8em;
+	vertical-align: middle;
+	position: sticky;
+	top: 0;
+}
+
+#nav__div__logo, #nav__div__links, #nav__div__log {
+	height: 100%;
+	display: inline-block;
+}
+
+.nav__txt, .nav__link, .nav__log {
+	text-decoration: none;
+	display: inline-block;
+	color: #ecf0f1;
+	line-height: 60px;
+	padding: 0 12px;
+}
+
+#nav__div__logo, #nav__div__links {
+	float: left;
+}
+
+#nav__div__log {
+	float: right;
+}
+
+#nav__logout {
+	display: none;
+	text-align: center;
+	text-decoration: underline;
+	background-color: #66b033;
+	color: #ecf0f1;
+}
+
+#nav__logout:hover {
+	color: black;
+}
+
+#nav__logout a {
+	color: inherit;
+	line-height: 30px;
+}
+
+#nav__div__log:hover #nav__logout {
+	display: block;
+}
+
+.nav__link:hover, .nav__log:hover, .nav__link--active {
+	background: linear-gradient(#66b033, #82cd51, #c1e6a8);
+}
+
+#nav__div__logo img {
+	float: left;
+	height: 100%;
+	margin: 0 5px;
+}
+
+.nav__txt {
+	cursor: default;
+}
+
+#nav__logo__txt {
+	padding: 0 12px 0 0;
+}
+
+/*		Burger menu		*/
+#burger__container {
+	float: left;
+	margin-top: 5px;
+	margin-left: 5px;
+	display: none;
+}
+
+#burger__bar1, #burger__bar2, #burger__bar3 {
+	width: 35px;
+	height: 5px;
+	background-color: #333;
+	margin: 6px 0;
+	transition: 0.4s;
+}
+
+.change #burger__bar1 {
+	-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+	transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change #burger__bar2 {
+	opacity: 0;
+}
+
+.change #burger__bar3 {
+	-webkit-transform: rotate(45deg) translate(-8px, -8px);
+	transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/************************************************************/
+/*							Section							*/
+/************************************************************/
+
+section {
+	min-width: 320px;
+	height: calc(100% - 95px);
+	overflow: auto;
+}
+
+/************************************************************/
+/*							Footer							*/
+/************************************************************/
+
+footer {
+	text-align: center;
+	color: #ecf0f1;
+	font-weight: bold;
+	height: 35px;
+	width: 100%;
+	min-width: 320px;
+	background: linear-gradient(#66b033, #528e29, #3d6b1f);
+	overflow: hidden;
+	position: fixed;
+	bottom: 0;
+	z-index: 100;
+}
+
+.footer__text {
+	width: 100%;
+	font-size: 1.2em;
+	padding: 5px;
+	float: left;
+}
+
+/************************************************************/
+/*							Modals							*/
+/************************************************************/
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 100;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background: rgba(0, 0, 0, 0.4);
+	padding-top: 100px;
+}
+
+.modal__container {
+	width: 50%;
+	padding: 25px;
+	margin: auto;
+	white-space: nowrap;
+	overflow: hidden;
+	background: #E9EEE1;
+	border: 4px solid #528e29;
+	border-radius: 10px;
+}
+
+.close__modal {
+	color: #528e29;
+	float: right;
+	position: relative;
+	z-index: 20;
+}
+
+.close__modal:hover {
+	color: red;
+}
+
+/************************************************************/
+/*						Modal login							*/
+/************************************************************/
+
+#login__container {
+	max-width: 600px;
+}
+
+#login__form {
+	width: 70%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#login__container img {
+	width: 25%;
+	margin-right: 5%;
+	vertical-align: middle;
+}
+
+#login__form input[type=email], #login__form input[type=password] {
+	display: inline-block;
+	width: 100%;
+	padding: 4px 10px;
+	margin: 8px 0px;
+	box-sizing: border-box;
+}
+
+#login__form input[type=checkbox] {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#login__form label {
+	display: inline-block;
+	font-size: 1.2em;
+	vertical-align: middle;
+}
+
+#remember {
+	display: block;
+	text-align: center;
+}
+
+/************************************************************/
+/*						Modal contact						*/
+/************************************************************/
+
+#contact__container h2 {
+	text-align: center;
+}
+
+#contact__container img {
+	width: 20%;
+	margin-right: 5%;
+	vertical-align: middle;
+}
+
+#contact__form__header {
+	width: 75%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#contact__container input[type=text], #contact__recipient, #contact__message {
+	display: inline-block;
+	width: 100%;
+	padding: 4px 10px;
+	margin: 8px 0px;
+	box-sizing: border-box;
+}
+
+#contact__recipient {
+	padding: 0;
+	font-weight: bold;
+}
+
+#contact__form__body {
+	width: 100%;
+	clear: both;
+}
+
+#contact__message {
+	height: 200px;
+}
+
+#contact__btn--send {
+	display: block;
+	margin: auto;
+}
+
+
+.contact__feedback--return {
+	display: block;
+	margin: 5px auto;
+	width: fit-content;
+}
+/************************************************************/
+/*							Elements						*/
+/************************************************************/
+
+.btn__generic {
+	display: inline-block;
+	font: inherit;
+	font-weight: bold;
+	font-size: 1.2rem;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4);
+	padding: 4px 8px;
+	background: linear-gradient(#3d6b1f, #528e29, #66b033);
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.4);
+	vertical-align: middle;
+	white-space: nowrap;
+	width: fit-content;
+}
+
+.btn__generic:hover {
+	cursor: pointer;
+	background: linear-gradient(#66b033, #82cd51, #c1e6a8);
+}
+
+.btn__generic:active {
+	background: linear-gradient(#3d6b1f, #528e29, #66b033);
+	box-shadow: 1px 1px 10px black inset, 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/************************************************************/
+/*						Forgot password						*/
+/************************************************************/
+
+#field__forgot__password {
+	width: 80%;
+	margin: auto;
+}
+
+#form__forgot__password table {
+	margin: auto;
+	text-align: center;
+	min-width: 250px;
+}
+
+#form__forgot__password input {
+	min-width: 100px;
+}
+
+#form__forgot__password #success__message {
+	text-align: center;
+	color: #1c7220;
+}
+
+#form__forgot__password #error__message {
+	text-align: center;
+	color: darkred;
+}
+
+
+@media only screen and (max-width: 1024px) {
+
+	/************************************************************/
+	/*								Nav							*/
+	/************************************************************/
+	nav {
+		height: 55px;
+		font-size: 1.6em;
+	}
+
+	.nav__txt, .nav__link, .nav__log {
+		line-height: 55px;
+	}
+
+}
+
+@media only screen and (max-width: 960px) {
+
+	/************************************************************/
+	/*								Nav							*/
+	/************************************************************/
+	nav {
+		height: 50px;
+		font-size: 1.4em;
+	}
+
+	.nav__txt, .nav__link, .nav__log {
+		line-height: 50px;
+	}
+
+	section {
+		height: calc(100% - 90px);
+	}
+
+}
+
+@media screen and (max-width: 800px) {
+
+	/************************************************************/
+	/*								Nav							*/
+	/************************************************************/
+	#nav__div__logo {
+		float: none;
+		display: block;
+		margin: auto;
+		text-align: center;
+	}
+
+	#nav__div__logo img {
+		float: none;
+		display: inline;
+	}
+
+	#nav__div__links, .nav__txt {
+		display: none;
+	}
+
+	#nav__div__links {
+		position: absolute;
+		top: 50px;
+		z-index: 100;
+	}
+
+	.nav__link {
+		display: block;
+		color: black;
+		background: #66b033;
+	}
+
+	.nav__link:hover, .nav__link--active {
+		display: block;
+		color: black;
+		background: linear-gradient(#66b033, #c1e6a8, #c1e6a8, #66b033);
+	}
+
+	#burger__container {
+		display: block;
+	}
+
+	/************************************************************/
+	/*							Modals							*/
+	/************************************************************/
+	.modal {
+		padding-top: 20px;
+	}
+
+	.modal__container {
+		width: 80%;
+	}
+
+	section {
+		height: calc(100% - 85px);
+	}
+
+}
+
+@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (max-width: 380px) {
+}
+
+@media only screen and (max-width: 320px) {
+}

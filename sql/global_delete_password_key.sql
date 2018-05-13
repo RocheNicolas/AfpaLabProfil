@@ -1,0 +1,1 @@
+DELETE FROM mdp_oublie WHERE cle_mdp_oublie = "@cle_mdp_oublie"

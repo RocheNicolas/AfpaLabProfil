@@ -1,0 +1,1 @@
+INSERT INTO mdp_oublie (id_utilisateur,cle_mdp_oublie) VALUES (@id_utilisateur, "@cle_mdp_oublie")

@@ -1,0 +1,1 @@
+SELECT * FROM utilisateur__technologie WHERE id_utilisateur = @id_utilisateur

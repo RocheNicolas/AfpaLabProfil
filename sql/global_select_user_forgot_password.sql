@@ -1,0 +1,1 @@
+SELECT * FROM utilisateur WHERE courriel_utilisateur = "@courriel_utilisateur"

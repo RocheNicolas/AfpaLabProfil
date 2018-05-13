@@ -1,0 +1,1 @@
+SELECT * FROM mdp_oublie WHERE id_utilisateur = @id_utilisateur

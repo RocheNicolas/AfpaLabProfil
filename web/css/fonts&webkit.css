@@ -1,0 +1,32 @@
+/************************************************************/
+/*							Fonts							*/
+/************************************************************/
+
+/* Font Awesome (logo) */
+@import "fontawesome-all.css";
+
+/* Agency */
+@font-face {
+	font-family: 'AGENCYB';
+	src: url('../fonts/AGENCYB.eot');
+	src: local('AGENCYB'), url('../fonts/AGENCYB.woff') format('woff'), url('../fonts/AGENCYB.ttf') format('truetype');
+}
+
+/************************************************************/
+/*						Zoom Animation						*/
+/************************************************************/
+
+.animate {
+	-webkit-animation: animatezoom 0.8s;
+	animation: animatezoom 0.8s
+}
+
+@-webkit-keyframes animatezoom {
+	from {-webkit-transform: scale(0)}
+	to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+	from {transform: scale(0)}
+	to {transform: scale(1)}
+}

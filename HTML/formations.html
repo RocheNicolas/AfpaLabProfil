@@ -1,0 +1,13 @@
+<div class="select" id="select__stagiaires">
+	<div id="select__stagiaires__container">
+	    <select id="formation__liste" class="formation__select">
+	        <option>Selectionner une formation...</option>
+	        <?php foreach($obj_main->result["liste_formation"] as $formation) : ?>
+	        <option value="<?= $formation["id_formation"] ?>"<?php //if ($formation["intitule_formation"] === "Développeur Logiciel") {echo " selected";} ?>><?= $formation["intitule_formation"] ?></option>
+	        <?php endforeach; ?>
+
+	    </select>
+	</div>
+</div>
+
+<div id="container__carousel" class="owl-carousel owl-theme"></div>

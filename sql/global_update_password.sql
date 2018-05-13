@@ -1,0 +1,1 @@
+UPDATE utilisateur SET mdp_utilisateur = "@mdp_utilisateur" WHERE id_utilisateur = "@id_utilisateur"

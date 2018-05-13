@@ -1,0 +1,629 @@
+
+/**************************************************/
+/*               ** CAROUSEL **
+/*               --------------
+ */
+/**************************************************/
+
+#formation__carousel__section {
+	margin-top: 2%;
+}
+
+#container__carousel {
+    margin-top: 2%;
+}
+
+.item {
+    width: 85%;
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid #0a4906;
+    border-radius: 5px;
+    color: #000;
+    z-index: 2;
+    box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.41);
+}
+
+.item button{
+    margin: 0;
+    width: auto;
+    color: #000;
+}
+
+
+/**************************************************/
+/*                  ** ITEM **
+/*                  ----------
+ */
+/**************************************************/
+
+.carousel h3, .carousel p {
+	margin: 0;
+	padding: 0;
+	-webkit-margin-before: inherit;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+}
+
+/****************************/
+/* ITEM__LAYOUT
+/****************************/
+
+.item__formation {
+    display: grid;
+    grid-template-areas:
+            "header header"
+            "techno techno"
+            "teacher project";
+    grid-template-columns: 28% 71.5%;
+    grid-template-rows: 17% 13% 69%;
+    grid-column-gap: 0.5%;
+    grid-row-gap: 0.5%;
+    height: 100%;
+    margin: 0;
+}
+
+
+/****************************/
+/* ITEM__HEADER
+/****************************/
+
+.item__formation__header {
+    width: 100%;
+    height: 100%;
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1c7220;
+    color: #FFF;
+    font-size: 2vw;
+}
+
+.item__formation__header__bg {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(210, 211, 201, 0.44);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid rgba(255, 255, 255, 0.3);;
+}
+
+.item__formation__header h2{
+    font-size: 3vw;
+}
+
+
+.formation__header__date {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    font-size: 1.5vw;
+}
+
+.formation__header__date svg{
+    padding-right: 2%;
+}
+
+
+/****************************/
+/* ITEM__TECHNO
+/****************************/
+
+.item__formation__techno {
+    grid-area: techno;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item__formation__techno__container {
+    width: 100%;
+    height: 94%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(234, 234, 228, 0.51);
+    border: 2px solid rgba(0, 128, 0, 0.48);
+}
+
+.item__formation__techno img{
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+}
+
+
+/****************************/
+/* ITEM__INSTRUCTOR
+/****************************/
+
+.item__formation__instructor {
+    grid-area: teacher;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(23,109,37);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item__formation__instructor__container {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #FFF;
+    font-size: 1.8vw;
+    background-color: rgba(248, 255, 237, 0.31);
+    border-radius: 5px;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.item__formation__instructor__photo {
+    background-color: #f8ffed;
+    border-radius: 10px;
+}
+
+.item__formation__instructor__photo__bg {
+    margin: 5px;
+}
+
+.item__formation__instructor__photo img {
+    width: 100px;
+    height: 100px;
+    padding-top: 5px;
+}
+
+.item__formation__instructor__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8vw;
+}
+
+.item__formation__instructor__section p {
+    font-size: 2.2vw;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.item__formation__instructor button{
+    margin: 10px;
+}
+
+/****************************/
+/* ITEM__PROJECTS
+/****************************/
+
+.item__formation__project {
+    grid-area: project;
+    background-color: rgba(248, 255, 237, 0.36);
+}
+
+.item__formation__project__header {
+    width: 100%;
+    height: 13%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c7220;
+}
+
+.item__formation__project h3{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    padding: 0;
+    background-color: rgba(210, 211, 201, 0.44);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid rgba(255, 255, 255, 0.3);;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 2vw;
+}
+
+.item__formation__project__container {
+    overflow-y: auto;
+    height: 500px;
+}
+
+.item__formation__projects__entity__container1, .item__formation__projects__entity__container2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 30px 7px 30px;
+}
+
+.item__formation__projects__entity {
+    background-color: rgba(255, 255, 255, 0.77);
+    margin: 5px 3px 0 0;
+    border: 2px solid green;
+}
+
+.item__formation__projects__entity__container1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5d9f56;
+}
+
+.item__formation__projects__entity__container2 {
+    font-size: 1.6vw;
+    overflow: hidden;
+}
+
+.item__formation__projects__entity__container1 span:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    color: #FFF;
+    font-size: 2vw;
+}
+
+.item__formation__project button{
+    height: auto;
+    padding: 0 5px;
+}
+
+
+/**************************************************/
+/*              ** MEDIA QUERIES **
+/*              -------------------
+/*
+/*  1200 -> 1299
+/*  1000 -> 1199
+/*  800 -> 999
+/*  600 -> 799
+/*  500 -> 599
+/*
+/**************************************************/
+
+
+/************* 1200 -> 1299 ****************/
+@media screen and (min-width: 1200px) and (max-width: 1299px) {
+
+    /****************************/
+    /* ITEM__PROJECTS
+    /****************************/
+
+    .item__formation__project h3{
+        font-size: 2vw;
+    }
+
+    .item__formation__projects__entity__container2 {
+        font-size: 1.6vw;
+    }
+
+    .item__formation__projects__entity__container1 span:nth-child(1){
+        font-size: 1.8vw;
+    }
+	
+	
+	/****************************/
+    /* ITEM__TECHNO
+    /****************************/
+
+    .item__formation__techno img{
+		width: 70px;
+		height: 70px;
+		margin: 5px;
+	}
+}
+
+
+/************* 1000 -> 1199 ****************/
+@media screen and (min-width: 1000px) and (max-width: 1199px) {
+	
+	/****************************/
+    /* ITEM__TECHNO
+    /****************************/
+
+    .item__formation__techno img{
+		width: 80px;
+		height: 80px;
+		margin: 5px;
+	}
+	
+
+    /****************************/
+    /* ITEM__PROJECTS
+    /****************************/
+
+    .item__formation__project h3{
+        font-size: 2.2vw;
+    }
+
+    .item__formation__projects__entity__container2 {
+        font-size: 1.8vw;
+    }
+
+    .item__formation__projects__entity__container1 span:nth-child(1){
+        font-size: 2vw;
+    }
+}
+
+
+/************* 800 -> 999 ****************/
+@media screen and (min-width: 700px) and (max-width: 999px) {
+	
+	/****************************/
+    /* ITEM__TECHNO
+    /****************************/
+
+    .item__formation__techno img{
+		width: 60px;
+		height: 60px;
+		margin: 5px;
+	}
+
+	
+    /****************************/
+    /* ITEM__INSTRUCTOR
+    /****************************/
+
+    .item__formation__instructor__container {
+        font-size: 2vw;
+    }
+
+    .item__formation__instructor__section {
+        font-size: 2vw;
+    }
+
+    .item__formation__instructor__section p:nth-child(1){
+        font-size: 2.4vw;
+    }
+
+    .item__formation__instructor__section p:nth-child(2){
+        font-size: 2.4vw;
+    }
+	
+	/****************************/
+	/* ITEM__PROJECTS
+	/****************************/
+
+	.item__formation__project h3{
+    font-size: 2.2vw;
+}
+
+}
+
+
+/************* 600 -> 799 ****************/
+@media screen and (min-width: 500px) and (max-width: 699px) {
+
+    /****************************/
+    /* ITEM__LAYOUT
+    /****************************/
+
+    .item__formation {
+        display: grid;
+        grid-template-areas:
+                "header header"
+                "techno techno"
+                "teacher teacher"
+                "project project";
+        grid-template-columns: 28% 71.5%;
+        grid-template-rows: 14% 12% 16.5% 56%;
+        grid-column-gap: 0.5%;
+        grid-row-gap: 0.5%;
+        height: 100%;
+        margin: 0;
+    }
+
+    /****************************/
+    /* ITEM__HEADER
+    /****************************/
+
+    .item__formation__header {
+        font-size: 2.4vw;
+    }
+
+    .item__formation__header h2{
+        font-size: 3.4vw;
+    }
+
+    .formation__header__date {
+        font-size: 1.9vw;
+    }
+
+
+    /****************************/
+    /* ITEM__TECHNO
+    /****************************/
+
+    .item__formation__techno img{
+        width: 50px;
+        height: 50px;
+        margin: 3px;
+    }
+
+    /****************************/
+    /* ITEM__INSTRUCTOR
+    /****************************/
+
+    .item__formation__instructor__photo {
+        height: 80px;
+    }
+
+    .item__formation__instructor__photo img{
+        width: 70px;
+        height: 70px;
+        padding: 0;
+    }
+
+    .item__formation__instructor__photo__bg {
+        width: 90%;
+        height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .item__formation__instructor__container {
+        width: 100%;
+        font-size: 2.2vw;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .item__formation__instructor__section {
+        font-size: 2.2vw;
+    }
+
+    .item__formation__instructor__section p:nth-child(1){
+        font-size: 2.6vw;
+    }
+
+    .item__formation__instructor__section p:nth-child(2){
+        font-size: 2.6vw;
+    }
+
+
+    /****************************/
+    /* ITEM__PROJECTS
+    /****************************/
+
+    .item__formation__project {
+        height: 97.5%;
+    }
+
+    .item__formation__project__header {
+        height: 35%;
+    }
+
+    .item__formation__project h3{
+        font-size: 2.8vw;
+    }
+
+    .item__formation__project__container {
+        height: 87%;
+    }
+    .item__formation__projects__entity__container2 {
+        display: none;
+    }
+
+    .item__formation__projects__entity__container1 span:nth-child(1){
+        font-size: 2.4vw;
+    }
+
+    .item__formation__projects__entity {
+        margin: 5px 3px 5px 3px;
+    }
+}
+
+
+/************* 400 -> 599 ****************/
+@media screen and (min-width: 100px) and (max-width: 499px) {
+
+    /****************************/
+    /* ITEM__LAYOUT
+    /****************************/
+
+    .item__formation {
+        display: grid;
+        grid-template-areas:
+                "header header"
+                "techno techno"
+                "teacher teacher"
+                "project project";
+        grid-template-columns: 28% 71.5%;
+        grid-template-rows: 15% 11% 16.5% 56%;
+        grid-column-gap: 0.5%;
+        grid-row-gap: 0.5%;
+        height: 100%;
+        margin: 0;
+    }
+
+    /****************************/
+    /* ITEM__HEADER
+    /****************************/
+
+    .item__formation__header {
+        font-size: 2.4vw;
+    }
+
+    .item__formation__header h2{
+        font-size: 3.4vw;
+    }
+
+    .formation__header__date {
+        font-size: 1.9vw;
+    }
+
+
+
+    /****************************/
+    /* ITEM__INSTRUCTOR
+    /****************************/
+
+    .item__formation__instructor__photo {
+        height: 50px;
+    }
+
+    .item__formation__instructor__photo img{
+        width: 40px;
+        height: 40px;
+        padding: 0;
+    }
+
+    .item__formation__instructor__photo__bg {
+        width: 46px;
+        height: 46px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .item__formation__instructor__container {
+        width: 100%;
+        font-size: 2.4vw;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .item__formation__instructor__section {
+        font-size: 2.4vw;
+    }
+
+
+    /****************************/
+    /* ITEM__PROJECTS
+    /****************************/
+
+    .item__formation__project {
+        height: 97.5%;
+    }
+
+    .item__formation__project__header {
+        height: 15%;
+    }
+
+    .item__formation__project h3{
+        font-size: 2.8vw;
+    }
+
+    .item__formation__project__container {
+        height: 86%;
+    }
+    .item__formation__projects__entity__container2 {
+        display: none;
+    }
+
+    .item__formation__projects__entity__container1 span:nth-child(1){
+        font-size: 2.4vw;
+    }
+
+    .item__formation__projects__entity {
+        margin: 5px 3px 0 3px;
+    }
+}

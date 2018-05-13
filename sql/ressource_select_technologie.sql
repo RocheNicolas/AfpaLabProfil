@@ -1,0 +1,2 @@
+SELECT DISTINCT technologie.nom_technologie FROM technologie
+RIGHT JOIN technologie__ressource on technologie.id_technologie = technologie__ressource.id_technologie

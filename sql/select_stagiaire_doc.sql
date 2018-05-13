@@ -1,0 +1,1 @@
+SELECT * FROM utilisateur__ressource LEFT JOIN ressource ON utilisateur__ressource.id_ressource = ressource.id_ressource

@@ -1,0 +1,1 @@
+SELECT * FROM utilisateur WHERE mdp_utilisateur = "@mdp_utilisateur" AND courriel_utilisateur = "@courriel_utilisateur"

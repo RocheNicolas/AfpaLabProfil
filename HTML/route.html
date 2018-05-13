@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title><?= $obj_main->result["headTitle"] ?></title>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<!-- For Internet Explorer : to force css3 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<!-- Tablettes 'n' Mobiles -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- main css -->
+	<link type="text/css" rel="stylesheet" href="css/css_loader.css?0">
+</head>
+
+<body>
+<div id="page">
+	<!-- Nav -->
+	<nav>
+		<div id="burger__container">
+			<div id="burger__bar1"></div>
+			<div id="burger__bar2"></div>
+			<div id="burger__bar3"></div>
+		</div>
+		<div id="nav__div__log">
+			<?php if (isset($_SESSION["pseudo_utilisateur"])) : ?>
+				<span class="nav__log">
+                    <span id="nav__login__txt" class="nav__txt"><?= $_SESSION["pseudo_utilisateur"] ?></span>&nbsp;&nbsp;&nbsp;<i
+							class="fas fa-sign-out-alt"></i>
+                </span>
+				<div id="nav__logout">
+					<a href="deconnexion.php">Se deconnecter</a>
+				</div>
+			<?php else : ?>
+				<span id class="nav__log" onclick="open__login()">
+				<i class="fas fa-user-circle"></i>
+				<span id="nav__login__txt" class="nav__txt">Login</span>
+			</span>
+			<?php endif; ?>
+		</div>
+		<div id="nav__div__logo">
+			<img src="img/afpalab_logo_white.png" alt="Logo AfpaLab">
+			<span id="nav__logo__txt" class="nav__txt">AfpaLab</span>
+		</div>
+		<div id="nav__div__links">
+			<a href="route.php?page=accueil"
+			   class="nav__link <?php if ($_GET["page"] === "accueil") : ?>nav__link--active<?php endif; ?>">Accueil</a><!--
+			--><a href="route.php?page=formations"
+			      class="nav__link <?php if ($_GET["page"] === "formations") : ?>nav__link--active<?php endif; ?>">Formations</a><!--
+			--><a href="route.php?page=stagiaires"
+			      class="nav__link <?php if ($_GET["page"] === "stagiaires") : ?>nav__link--active<?php endif; ?>">Stagiaires</a><!--
+			--><a href="route.php?page=ressources"
+			      class="nav__link <?php if ($_GET["page"] === "ressources") : ?>nav__link--active<?php endif; ?>">Ressources</a><!--
+			<?php if (isset($_SESSION["pseudo_utilisateur"])) : ?>
+				--><a href="route.php?page=profil"
+			          class="nav__link <?php if ($_GET["page"] === "profil") : ?>nav__link--active<?php endif; ?>">Profil</a>
+			<!--
+			<?php endif; ?>
+
+		--></div>
+	</nav>
+
+	<!-- Section -->
+	<section>
+		<?php include $obj_main->GLOBALS_INI['PATHS']['PATH_HOME'] . $obj_main->GLOBALS_INI['PATHS']['PATH_VIEW'] . $obj_main->VARS_HTML["page"] . ".html" ?>
+	</section>
+
+	<!-- Footer -->
+	<footer><span class="footer__text">AfpaLab 2016-<?= date("Y"); ?></span></footer>
+
+	<!-- Modal for login -->
+	<div id="modal__login" class="modal">
+		<div id="login__container" class="modal__container animate">
+			<i class="close__modal fas fa-times"></i>
+			<img src="img/afpalab_logo.png" alt="Logo AfpaLab">
+			<div id="login__form">
+				<label for="login__mail">Mail:</label><br><input type="email" id="login__mail" placeholder="Adresse mail"
+				                                                   required><br>
+				<label for="login__password">Mot de passe:</label><br><input type="password" id="login__password"
+				                                                             placeholder="Mot de passe" pattern="<?= $obj_main->GLOBALS_INI["PATTERN"]["PASSWORD"] ?>" required><br>
+				<a id="link__forgot__password" href="">Mot de passe oublié?</a><br>
+				<input type="button" id="login__btn" class="btn__generic" value="Valider">
+				<span id="remember"><input type="checkbox" id="remember--checkbox" checked><label
+							for="remember--checkbox">Se souvenir de moi</label></span>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal for contact -->
+	<div id="modal__contact" class="modal">
+		<div id="contact__container" class="modal__container animate">
+			<i class="close__modal fas fa-times"></i>
+			<h2>Formulaire de contact</h2>
+			<img src="img/afpalab_logo.png" alt="Logo AfpaLab">
+			<div id="contact__form__header">
+				<span id="contact__recipient"></span><br>
+				<label for="contact__name">Expéditeur: </label><br><input type="text" id="contact__name"><br>
+				<label for="contact__mail">Adresse courriel: </label><br><input type="text" id="contact__mail"><br>
+			</div>
+			<div id="contact__form__body">
+				<label for="contact__subject">Sujet: </label><br><input type="text" id="contact__subject"><br>
+				<label for="contact__message">Message:</label><br><textarea id="contact__message"></textarea><br>
+				<span id="contact__feedback"></span>
+				<input type="hidden" id="contact__key" value="">
+				<button id="contact__btn--send" class="btn__generic" onclick="get_email_data()">Envoyer</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Scripts -->
+<!-- JQuery library -->
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<!-- JS -->
+<script type="text/javascript" src="js/main.js"></script>
+<?php if (isset($obj_main->result["libJs"])) : ?>
+	<?php foreach ($obj_main->result["libJs"] as $jsFile) : ?>
+		<script type="text/javascript" src="js/<?= $jsFile ?>.js"></script>
+	<?php endforeach; ?>
+<?php endif; ?>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+SELECT id_session, DATE_FORMAT(date_debut_session, '%m/%Y') AS date_debut_session, titre_session, id_formation FROM session WHERE id_formation = @id_formation
